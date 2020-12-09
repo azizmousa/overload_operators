@@ -18,7 +18,7 @@ public:
     ~String(); // the destrcutor
 
     const char *get_string()const; // data getter
-    void set_string(char *data); //data setter
+    void set_string(const char *data); //data setter
 
     String &operator=(const String &data); // assignment operator overload;
     String &operator=(String &&data); //rvalue move operator;
