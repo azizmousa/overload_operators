@@ -65,11 +65,22 @@ void String::set_string(const char *data){
 
 /*
  * String &String::operator=(const String &string)
- * assigment operator that make deep copy 
+ * assigment operator overload that make deep copy 
 */
 String &String::operator=(const String &string){
     if(this->data == string.data)
         return *this;
     this->set_string(string.data);
+    return *this;
+}
+
+/*
+ * String &String::operator=(String &&string)
+ * assignment operator to move the rvalue
+*/
+String &String::operator=(String &&string){
+    delete [] this->data;
+    this->data = string.data;
+    string.data = nullptr;
     return *this;
 }
