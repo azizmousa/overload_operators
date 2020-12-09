@@ -10,7 +10,7 @@
 */
 String::String(const char *data):data{nullptr}{
     this->data = new char[std::strlen(data) + 1];    
-    *this->data = *data;
+    std::strcpy(this->data, data);
     std::cout << "char parameterized constructor" << std::endl;
 }
 /*
