@@ -62,3 +62,14 @@ void String::set_string(const char *data){
     this->data = new char[std::strlen(data) + 1];
     std::strcpy(this->data, data);
 }
+
+/*
+ * String &String::operator=(const String &string)
+ * assigment operator that make deep copy 
+*/
+String &String::operator=(const String &string){
+    if(this->data == string.data)
+        return *this;
+    this->set_string(string.data);
+    return *this;
+}
