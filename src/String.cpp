@@ -9,8 +9,7 @@
  * make a deep copy
 */
 String::String(const char *data):data{nullptr}{
-    this->data = new char[std::strlen(data) + 1];    
-    std::strcpy(this->data, data);
+    this->set_string(data);
     std::cout << "char parameterized constructor" << std::endl;
 }
 /*
@@ -54,3 +53,12 @@ const char *String::get_string()const{
     return this->data;
 }
 
+/*
+ * void set_string(const char *data)
+ * set char value to the object
+*/
+void String::set_string(const char *data){
+    delete [] this->data;
+    this->data = new char[std::strlen(data) + 1];
+    std::strcpy(this->data, data);
+}
