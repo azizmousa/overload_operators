@@ -42,8 +42,8 @@ String::String(String &&string):data{string.data}{
  * ~String() destructor
 */
 String::~String(){
-    delete [] this;
-    std::cout << "the object " << this->data << " deleted" << std::endl;
+    delete [] this->data;
+    std::cout << "the object " << this << " deleted" << std::endl;
 }
 
 /*
