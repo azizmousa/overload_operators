@@ -1,5 +1,5 @@
-#ifndef _STRING_H
-#define _STRING_H
+#ifndef _A_STRING_H
+#define _A_STRING_H
 
 /*
  * String is a class deal with c_syle string
@@ -27,4 +27,4 @@ public:
     int get_size()const; // get the string size
 };
 
-#endif // _STRING_H
+#endif // _A_STRING_H
