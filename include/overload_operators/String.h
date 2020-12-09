@@ -12,15 +12,18 @@ private:
 
 public:
     String(); //default constructor
-    String(char &data); // parametarized constructo (copy constructor)
-    String(char &&data); // move constructor
+    String(const char *data); // parametarized constructo (copy constructor)
+    String(const String &&data); // move constructor
     ~String(); // the distrcutor
 
-    char *get_srting()const; // data getter
+    const char *get_srting()const; // data getter
     void set_string(char *data); //data setter
 
-    String &operator=(String &data); // assignment operator overload;
+    String &operator=(const String &data); // assignment operator overload;
     String &operator=(String &&data); //rvalue move operator;
+
+    void display()const; // display the object content
+    int get_size()const; // get the string size
 };
 
 #endif // _STRING_H
