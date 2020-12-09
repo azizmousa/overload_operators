@@ -17,7 +17,7 @@ public:
     String(const String &&data); // move constructor
     ~String(); // the distrcutor
 
-    const char *get_srting()const; // data getter
+    const char *get_string()const; // data getter
     void set_string(char *data); //data setter
 
     String &operator=(const String &data); // assignment operator overload;
