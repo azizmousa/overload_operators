@@ -30,6 +30,15 @@ String::String(const String &string):String{string.get_string()}{
 }
 
 /*
+ * String(String &&string)
+ * move constructor for the rvalue
+*/
+String::String(String &&string):data{string.data}{
+    string.data = nullptr;
+    std::cout << "move constructor" << std::endl;
+}
+
+/*
  * const char *get_string()const;
  * return the data pointer
 */
