@@ -39,9 +39,18 @@ String::String(String &&string):data{string.data}{
 }
 
 /*
+ * ~String() destructor
+*/
+String::~String(){
+    delete [] this;
+    std::cout << "the object " << this->data << " deleted" << std::endl;
+}
+
+/*
  * const char *get_string()const;
  * return the data pointer
 */
 const char *String::get_string()const{
     return this->data;
 }
+

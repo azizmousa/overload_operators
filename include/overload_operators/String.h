@@ -15,7 +15,7 @@ public:
     String(const char *data); // parametarized constructo
     String(const String &string); // copy constructor
     String(String &&data); // move constructor
-    ~String(); // the distrcutor
+    ~String(); // the destrcutor
 
     const char *get_string()const; // data getter
     void set_string(char *data); //data setter
