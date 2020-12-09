@@ -2,7 +2,7 @@
 cmake_minimum_required( VERSION 3.19 )
 
 # project name
-set(PROJECT_NAME "project_name")
+set(PROJECT_NAME "exe")
 project( ${PROJECT_NAME} )
 
 # flags
