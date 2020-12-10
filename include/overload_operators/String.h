@@ -12,7 +12,7 @@ private:
 
 public:
     // String(); //default constructor
-    String(const char *data=nullptr); // parametarized constructo
+    String(const char *data=""); // parametarized constructo
     String(const String &string); // copy constructor
     String(String &&data); // move constructor
     ~String(); // the destrcutor
