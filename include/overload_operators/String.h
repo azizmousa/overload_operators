@@ -11,8 +11,8 @@ private:
     char *data; // pointer to sequence of characters
 
 public:
-    String(); //default constructor
-    String(const char *data); // parametarized constructo
+    // String(); //default constructor
+    String(const char *data=nullptr); // parametarized constructo
     String(const String &string); // copy constructor
     String(String &&data); // move constructor
     ~String(); // the destrcutor
@@ -24,6 +24,7 @@ public:
     String &operator=(String &&data); //rvalue move operator;
     String operator-(); // uniry operator overload to lowercase all the string
     String operator+(const String &rhs_string); // binary + operator overload to concatenate my strings
+    bool operator==(const String &rhs_string); // binary operator overload to check if two strings are equals
 
     void display()const; // display the object content
     int get_size()const; // get the string size

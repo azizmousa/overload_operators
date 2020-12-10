@@ -10,22 +10,20 @@
 */
 String::String(const char *data):data{nullptr}{
     this->set_string(data);
-    std::cout << "char parameterized constructor" << std::endl;
 }
 /*
  * String()
  * default constructor 
 */
-String::String(): String{nullptr}{
-    std::cout << "default constructor" << std::endl;    
-}
+// String::String(): String{nullptr}{
+//     std::cout << "default constructor" << std::endl;    
+// }
 
 /*
  * String(const String &string)
  * copy constructor make a deep copy
 */
 String::String(const String &string):String{string.get_string()}{
-   std::cout << "copy constructor" << std::endl;
 }
 
 /*
@@ -34,7 +32,6 @@ String::String(const String &string):String{string.get_string()}{
 */
 String::String(String &&string):data{string.data}{
     string.data = nullptr;
-    std::cout << "move constructor" << std::endl;
 }
 
 /*
@@ -42,7 +39,6 @@ String::String(String &&string):data{string.data}{
 */
 String::~String(){
     delete [] this->data;
-    std::cout << "the object " << this << " deleted" << std::endl;
 }
 
 /*
@@ -50,7 +46,7 @@ String::~String(){
  * return the data pointer
 */
 const char *String::get_string()const{
-    return this->data;
+    return (this->data == nullptr)? "":this->data;
 }
 
 /*
@@ -59,8 +55,15 @@ const char *String::get_string()const{
 */
 void String::set_string(const char *data){
     delete [] this->data;
-    this->data = new char[std::strlen(data) + 1];
-    std::strcpy(this->data, data);
+    int size{0};
+    if(data != nullptr) {
+        size = std::strlen(data);
+        this->data = new char[ size + 1];
+        std::strcpy(this->data, data);
+    }
+    else{
+        this->data = nullptr;
+    }
 }
 
 /*
@@ -112,3 +115,4 @@ String String::operator+(const String &rhs_string){
     delete [] temp;
     return conc;
 }
+
