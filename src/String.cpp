@@ -116,3 +116,6 @@ String String::operator+(const String &rhs_string){
     return conc;
 }
 
+bool String::operator==(const String &rhs_string){
+    return (std::strcmp(this->data, rhs_string.data) == 0);
+}
