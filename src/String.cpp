@@ -123,3 +123,8 @@ String String::operator+(const String &rhs_string){
 bool String::operator==(const String &rhs_string)const{
     return (std::strcmp(this->data, rhs_string.data) == 0);
 }
+
+std::ostream &operator<<(std::ostream &out, String &string){
+    out << string.data;
+    return out;
+}
