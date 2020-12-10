@@ -84,3 +84,14 @@ String &String::operator=(String &&string){
     string.data = nullptr;
     return *this;
 }
+
+String String::operator-(){
+    size_t size = std::strlen(this->data);
+    char *temp = new char[size + 1];
+    std::strcpy(temp, this->data);
+    for(char *c{temp}; c<(temp+size);++c)
+        *c = std::tolower(*c);
+    String lower{temp};
+    delete [] temp;
+    return lower;
+}

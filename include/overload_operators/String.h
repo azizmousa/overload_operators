@@ -22,7 +22,8 @@ public:
 
     String &operator=(const String &data); // assignment operator overload;
     String &operator=(String &&data); //rvalue move operator;
-
+    String operator-(); // uniry operator overload to lowercase all the string
+    
     void display()const; // display the object content
     int get_size()const; // get the string size
 };
