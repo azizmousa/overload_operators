@@ -23,7 +23,8 @@ public:
     String &operator=(const String &data); // assignment operator overload;
     String &operator=(String &&data); //rvalue move operator;
     String operator-(); // uniry operator overload to lowercase all the string
-    
+    String operator+(const String &rhs_string); // binary + operator overload to concatenate my strings
+
     void display()const; // display the object content
     int get_size()const; // get the string size
 };

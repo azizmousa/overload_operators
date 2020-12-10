@@ -85,6 +85,10 @@ String &String::operator=(String &&string){
     return *this;
 }
 
+/*
+ * String String::operator-()
+ * overloaded operator to set all chars to lower case
+*/
 String String::operator-(){
     size_t size = std::strlen(this->data);
     char *temp = new char[size + 1];
@@ -94,4 +98,17 @@ String String::operator-(){
     String lower{temp};
     delete [] temp;
     return lower;
+}
+
+/*
+ * String String::operator+(const String &rhs_string)
+ * overloaded operator to concatenate to of my strings together
+*/
+String String::operator+(const String &rhs_string){
+    size_t size = std::strlen(this->data) + std::strlen(rhs_string.data);
+    char *temp = new char [size +1];
+    std::strcpy(temp, std::strcat(this->data, rhs_string.data));
+    String conc{temp};
+    delete [] temp;
+    return conc;
 }
