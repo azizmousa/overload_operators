@@ -7,6 +7,9 @@
 */
 class String{
 
+friend std::ostream &operator<<(std::ostream &out, String &string);
+friend std::istream &operator>>(std::istream &in, String &string);
+
 private:
     char *data; // pointer to sequence of characters
 
