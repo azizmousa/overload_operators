@@ -7,7 +7,7 @@
 */
 class String{
 
-friend std::ostream &operator<<(std::ostream &out, String &string);
+friend std::ostream &operator<<(std::ostream &out, const String &string);
 friend std::istream &operator>>(std::istream &in, String &string);
 
 private:
