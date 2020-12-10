@@ -124,7 +124,30 @@ bool String::operator==(const String &rhs_string)const{
     return (std::strcmp(this->data, rhs_string.data) == 0);
 }
 
-std::ostream &operator<<(std::ostream &out, String &string){
+
+/*
+ * std::ostream&operator<<(std::ostream &out, String &string)
+ * insertion operator overload
+*/
+std::ostream &operator<<(std::ostream &out, const String &string){
     out << string.data;
     return out;
+}
+
+/*
+ * std::istream &operator>>(std::istream &in, String &string)
+ * extraction operator overload
+*/
+std::istream &operator>>(std::istream &in, String &string){
+    size_t buff_size = 2; 
+    while(in.peek() == ' ' || in.peek() == '\n'){
+        in.ignore(1);
+    }
+    char *buff = new char[buff_size];
+    while(in.peek()!=' ' && in.peek()!='\n'){
+        in >> buff;
+        string.set_string(buff);
+    }
+    delete [] buff;
+    return in;
 }
