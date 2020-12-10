@@ -116,6 +116,10 @@ String String::operator+(const String &rhs_string){
     return conc;
 }
 
-bool String::operator==(const String &rhs_string){
+/*
+ * bool String::operator==(const String &rhs_string)
+ * binary operator overloaded to compare between Strings objects
+*/
+bool String::operator==(const String &rhs_string)const{
     return (std::strcmp(this->data, rhs_string.data) == 0);
 }

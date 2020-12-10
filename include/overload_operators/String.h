@@ -24,7 +24,7 @@ public:
     String &operator=(String &&data); //rvalue move operator;
     String operator-(); // uniry operator overload to lowercase all the string
     String operator+(const String &rhs_string); // binary + operator overload to concatenate my strings
-    bool operator==(const String &rhs_string); // binary operator overload to check if two strings are equals
+    bool operator==(const String &rhs_string)const; // binary operator overload to check if two strings are equals
 
     void display()const; // display the object content
     int get_size()const; // get the string size
